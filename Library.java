@@ -1,0 +1,59 @@
+class library{
+    String name;
+    int bb;
+    library(String name)
+    {
+      this.name=name;
+      this.bb=0;
+    }
+    public boolean cb()
+    {
+      return false;
+    }
+    public void bob()
+    {
+      if(cb())
+      {
+        bb++;
+        System.out.println(name+" You borrowed "+bb+" book ");
+      }else{
+        System.out.println("Your Limit Exceeded!");
+      }
+    }
+  }
+  class students extends library
+  {
+    students(String name)
+    {
+      super(name);
+    }
+    public boolean cb()
+    {
+      return bb<3;
+    }
+  }
+  class teachers extends library
+  {
+    teachers(String name)
+    {
+      super(name);
+    }
+    public boolean cb()
+    {
+      return bb<10;
+    }
+  }
+  class Library_Books {
+    public static void main(String[] args) {
+        library a = new students("Anil");
+        library b1 = new students("Rakshitha");
+        library b = new teachers("Dr.Prem");
+        b1.bb=2;
+        b1.bob();
+        a.bb=8;
+        a.bob();
+        b.bb=8;
+        b.bob();
+        
+    }
+  }
